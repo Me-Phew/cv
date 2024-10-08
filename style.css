@@ -1,0 +1,169 @@
+:root {
+  --soft-black: rgb(34, 34, 34);
+  --soft-white: rgb(248, 248, 248);
+
+  --bg-light: var(--soft-white);
+  --bg-dark: var(--soft-black);
+
+  --text-light: var(--soft-black);
+  --text-dark: var(--soft-white);
+
+  --accent-light: rgb(49, 66, 219);
+  --accent-dark: rgb(0, 189, 126);
+
+  --bg: var(--bg-light);
+  --text: var(--text-light);
+
+  --accent: var(--accent-light);
+  --text-on-accent: var(--text-dark);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: var(--bg-dark);
+    --text: var(--text-dark);
+    --accent: var(--accent-dark);
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Blinker", sans-serif;
+  line-height: 1.6;
+  text-rendering: optimizelegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+a,
+a:active,
+a:visited {
+  color: var(--accent);
+}
+
+ul li {
+  margin-left: 2rem;
+}
+
+ul.headless-list {
+  list-style-type: none;
+}
+
+.accent {
+  color: var(--accent);
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.ui-bar {
+  background-color: var(--accent);
+  height: 75px;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  gap: .5rem;
+  color: var(--text-on-accent);
+}
+
+.ui-bar .dot-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--text-on-accent);
+}
+
+.ui-bar .close-icon {
+  margin-left: auto;
+}
+
+.wrapper {
+  padding: 1rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem 3rem;
+
+  @media only screen and (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+.personal-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.personal-details .name {
+  font-size: 3.75rem;
+  display: flex;
+  flex-direction: column;
+  line-height: 3.25rem;
+}
+
+.personal-details .role {
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.contact-info {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.section-heading {
+  color: var(--accent);
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.education-list {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.education-list-item {
+  line-height: 1.4rem;
+}
+
+.profiles {
+  grid-column: 2;
+}
+
+.profile-link-wrapper {
+  margin-left: .25rem;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.profile-link {
+  margin: 0;
+}
+
+footer {
+  padding: 0 2rem 1rem 2rem;
+}
